@@ -50,6 +50,8 @@ const haxe_grammar = {
           $.conditional_statement,
           $.throw_statement,
           $.block,
+          $.keyword,
+          $.reserved_keyword,
         ),
       ),
 
