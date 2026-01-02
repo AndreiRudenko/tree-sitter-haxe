@@ -1,5 +1,5 @@
 public function bar() {}
-// ^keyword
+// ^keyword.modifier
 //       ^ keyword
 //              ^ function
 
@@ -32,33 +32,33 @@ function new() {}
 
 new Object();
 // <- keyword
-//  ^ constructor
+//  ^ type.constructor
 
 new Object<T>();
 // <- keyword
-//  ^ constructor
+//  ^ type.constructor
 //         ^ type
 
 new pack.Object();
 // <- keyword
 //  ^ module
-//       ^ constructor
+//       ^ type.constructor
 
 new pack.Object<T>();
 // <- keyword
 //  ^ module
-//       ^ constructor
+//       ^ type.constructor
 //              ^ type
 
 new pack.Module.Object();
 // <- keyword
 //  ^ module
 //       ^ type
-//              ^ constructor
+//              ^ type.constructor
 
 new pack.Module.Object<T>();
 // <- keyword
 //  ^ module
 //       ^ type
-//              ^ constructor
+//              ^ type.constructor
 //                     ^ type

@@ -21,7 +21,7 @@ final class Main {}
 //          ^ type.definition
 
 abstract class Main {}
-// <- keyword
+// <- keyword.modifier
 //       ^ keyword
 //             ^ type.definition
 
