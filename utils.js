@@ -4,7 +4,7 @@
 const seperated = (rule, seperator) => seq(rule, repeat(seq(seperator, rule)));
 const seperatedSkipLast = (rule, seperator) => repeat1(seq(rule, seperator));
 
-const commaSep = (rule) => optional(seperated(rule, ','));
+const commaSep = (rule) => optional(seq(seperated(rule, ','), optional(',')));
 const commaSep1 = (rule) => seperated(rule, ',');
 
 const dotSep = (rule) => optional(seperated(rule, '.'));

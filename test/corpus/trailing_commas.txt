@@ -1,0 +1,33 @@
+================================
+Object literal with trailing comma
+================================
+o = { a: 1, };
+---
+(module
+  (identifier)
+  (operator)
+  (object
+    (pair
+      (identifier)
+      (integer))))
+
+================================
+Array literal with trailing comma
+================================
+a = [ 1, ];
+---
+(module
+  (identifier)
+  (operator)
+  (array
+    (integer)))
+
+================================
+Function call with trailing comma
+================================
+f(1, );
+---
+(module
+  (call_expression
+    object: (identifier)
+    arguments_list: (integer)))
