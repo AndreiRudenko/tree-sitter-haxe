@@ -57,7 +57,14 @@
 (operator) @operator
 (escape_sequence) @punctuation
 (null) @constant.builtin
-(access_identifiers "null" @keyword)
+(access_identifiers [
+  "default"
+  "null"
+  "get"
+  "set"
+  "dynamic"
+  "never"
+] @keyword)
 
 ; Keywords
 ; --------
