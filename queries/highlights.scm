@@ -112,7 +112,7 @@
 (function_declaration name: "new" @constructor)
 (call_expression
   "new" @keyword
-  constructor: (type_name) @constructor
+  constructor: (type_name) @type.constructor
 )
 
 ; Tokens
