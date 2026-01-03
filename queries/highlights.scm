@@ -1,5 +1,19 @@
 (identifier) @variable
+
+((identifier) @type
+ (#match? @type "^[A-Z]"))
+
+((identifier) @constant
+ (#match? @constant "^[A-Z][A-Z0-9_]*$"))
+
 (member_expression member: (identifier) @variable.member)
+
+((member_expression member: (identifier) @type)
+ (#match? @type "^[A-Z]"))
+
+((member_expression member: (identifier) @constant)
+ (#match? @constant "^[A-Z][A-Z0-9_]*$"))
+
 (comment) @comment
 
 ; Preprocessor Statement
