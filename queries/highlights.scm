@@ -1,4 +1,5 @@
 (identifier) @variable
+(member_expression member: (identifier) @variable.member)
 (comment) @comment
 
 ; Preprocessor Statement
@@ -34,14 +35,27 @@
 
 ; TODO: Figure out how to determined when "nested member call" is last ident.
 ; apparently this is a known issue https://github.com/tree-sitter/tree-sitter/issues/880
-(call_expression object: [
-  (_) @function
-  (_ (identifier) @function .)
-;   (_(_ (identifier) @function .))
-;   (_(_(_ (identifier) @function .)))
-;   (_(_(_(_ (identifier) @function .))))
-;   (_(_(_(_(_ (identifier) @function .)))))
-])
+(call_expression
+  object: (member_expression
+    member: (identifier) @function .))
+
+(call_expression
+  object: (member_expression
+    member: (member_expression
+      member: (identifier) @function .)))
+
+(call_expression
+  object: (member_expression
+    member: (member_expression
+      member: (member_expression
+        member: (identifier) @function .))))
+
+(call_expression
+  object: (member_expression
+    member: (member_expression
+      member: (member_expression
+        member: (member_expression
+          member: (identifier) @function .)))))
 
 ; Literals
 ; --------
